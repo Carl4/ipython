@@ -501,4 +501,3 @@ def launch_new_instance():
     app = NotebookApp.instance()
     app.initialize()
     app.start()
-

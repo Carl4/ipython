@@ -230,8 +230,8 @@ if 'setuptools' in sys.modules:
         parallel = 'pyzmq>=2.1.4',
         zmq = 'pyzmq>=2.1.4',
         doc = 'Sphinx>=0.3',
-        test = 'nose>=0.10.1',
-        notebook = 'tornado>=2.0'
+        test = ['nose>=0.10.1','requests'],
+        notebook = ['pyzmq>=2.1.4','tornado>=2.0']
     )
     requires = setup_args.setdefault('install_requires', [])
     setupext.display_status = False

@@ -78,7 +78,9 @@ class ClusterManager(LoggingConfigurable):
     def update_profiles(self):
         """List all profiles in the ipython_dir and cwd.
         """
-        for path in [get_ipython_dir(), os.getcwdu()]:
+        from IPython.core.application import BaseIPythonApplication
+        ipdir = BaseIPythonApplication.instance().ipython_dir
+        for path in [ipdir, os.getcwdu()]:
             for profile in list_profiles_in(path):
                 pd = self.get_profile_dir(profile, path)
                 if profile not in self.profiles:
